@@ -19,10 +19,14 @@
   "homepage": "https://github.com/andresfdezglez/SemanticWeb#readme",
   "dependencies": {
     "axios": "^0.27.2",
+    "express": "latest",
     "express.js": "^1.0.0",
+    "leaflet": "^1.8.0",
     "node-fetch": "^2.6.7",
     "request": "^2.88.2",
     "requests": "^0.3.0",
-    "wikibase-sdk": "^8.0.0"
+    "swig": "^1.4.2",
+    "wikibase-sdk": "^8.0.0",
+    "body-parser": "latest"
   }
 }
