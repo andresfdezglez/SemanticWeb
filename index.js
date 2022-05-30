@@ -5,6 +5,7 @@ const port = 3000
 const swig  = require('swig');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false }))
+
 app.get('/', (req, res) => {
 
     let respuesta = swig.renderFile("index.html")
@@ -30,8 +31,6 @@ const wbk = WBK({
     instance: 'http://156.35.98.119'
 })
 
-var state = "florida"
-
 const headers = { 'Accept': 'application/json' };
 const urlFindAll = wbk.searchEntities({ search: "tornado"})
 
@@ -45,7 +44,6 @@ function findEntities(url,state,callback){
             for (var e in data.entities){
                 valueProperty = data.entities[e].claims.P6[0].mainsnak.datavalue.value.id
                 if(valueProperty === state){
-                    console.log(data.entities[e].id)
                     var obj = {
                        title: data.entities[e].labels.en.value ,
                        lat:  parseFloat(data.entities[e].claims.P26[0].mainsnak.datavalue.value.amount),
